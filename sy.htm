@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>营销助手</title>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <style>
+        @charset "utf-8";
+        /* CSS Document */
+        *{margin:0;padding:0;}
+        img,input{border:0;}
+        li{list-style:none;}
+        a {color:#709FC8;
+            text-decoration: none;
+        }
+        a:hover
+        {
+            text-decoration: none;
+            text-decoration: none;
+        }
+        input,button{border:0;font-family: 'Microsoft YaHei'}
+        body,html{width:100%;overflow-x:hidden;}
+        body {width:100%;
+            margin: 0;
+            font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif;
+            font-size:100%;
+            line-height: 1.5;
+            background:#f5f5f5;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+    /*当日收益，当月收益，酬金明细*/
+    .sy_title{background: #fff;font-size:0.75rem;line-height:2.6em;margin:0 auto 15px auto;}
+        .sy_title h3{font-size:1rem;text-align:center;line-height: 3em;}
+    .sy_title p{border-bottom:1px solid #ddd;padding: 0 10px;color:#709FC8;}
+    .sy_title a{color:#709FC8;}
+        /*办理明细*/
+        .banli{width:100%;font:0.75rem 'Microsoft YaHei';background:#fff;overflow:hidden;}
+        .banli h3{line-height: 34px;border-bottom: 1px solid #ddd;border-left:3px solid #4D89BD}
+        .banli h3 b{color:#4D89BD;height:34px;padding-left:10px;}
+        .banli select{width:150px;background: #ececec;height:30px;border-radius: 3px;margin:8px;font-family: 'Microsoft YaHei';border:1px solid #ccc;}
+        .banli table{line-height:2.6em;text-align: center;border-collapse:collapse;margin:15px auto;color:#666;}
+        .banli table td, .banli table th{
+            border:1px solid #ccc;
+            height: 30px;
+            padding: 0px;
+        }
+       table.ui_table{line-height:2.6em;text-align:center;margin:15px auto;color:#666;}
+        table.ui_table td,table.ui_table th{
+            border:0;
+            border-bottom:1px solid #ddd;
+            height: 30px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<!-- 当日预测收益-->
+<div class="sy_title">
+<h3>您当月已领激励<font color="red" size="5">1983</font>元</h3>
+</div>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div class="sy_title">
+<div id="main" style="height:200px;">
+</div>
+    </div>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div class="sy_title">
+    <div id="main2" style="height:200px;">
+    </div>
+</div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var
+            option = {
+                title : {
+                    text: '业务办理核酬对比图',
+                   // subtext: '纯属虚构',
+                    x:'center',
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['已核酬','未核酬']
+                },
+                series : [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius : '55%',
+                        center: ['50%', '60%'],
+                        data:[
+                            {value:92, name:'已核酬'},
+                            {value:8, name:'未核酬'},
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+    var  option2= {
+        title : {
+            text: '收益统计表',
+            // subtext: '纯属虚构',
+            x:'center',
+        },
+        color: ['#3398DB'],
+                tooltip : {
+            trigger: 'axis',
+                    axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true,
+                    show:false
+            },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['8月', '9月', '10月',],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+                yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+                series : [
+            {
+                name:'当月收益',
+                type:'bar',
+                barWidth: '60%',
+                data:[1025, 1370, 1930]
+            }
+        ]
+    };
+
+    myChart.setOption(option, true);
+    myChart2.setOption(option2, true);
+</script>
+<div class="banli">
+    <h3><b>登记量：</b></h3>
+    <select>
+        <option>2016/10/08</option>
+    </select>
+    <table width="100%" cellspacing="0" cellpadding="0" border="1">
+        <tr>
+            <th>业务类型</th><th>日登记量</th><th>登录总计</th>
+        </tr>
+    <tr bgcolor="#deeff7">
+        <td>实时办理量</td><td>12</td><td><font color="red">486</font></td>
+    </tr>
+        <tr bgcolor="#def3de">
+            <td>业务登记量</td><td>10</td><td><font color="red">372</font></td>
+        </tr>
+        <tr bgcolor="#fffbe7">
+            <td>副卡登记量</td><td>8</td><td><font color="red">234</font></td>
+        </tr>
+        <tr bgcolor="#deeff7">
+            <td>新入网登记量</td><td>5</td><td><font color="red">292</font></td>
+        </tr>
+        <tr bgcolor="#def3de">
+            <td>VoLTE登记量</td><td>8</td><td><font color="red">551</font></td>
+        </tr>
+        <tr bgcolor="#fffbe7">
+            <td>宽带登记量</td><td>2</td><td><font color="red">69</font></td>
+        </tr>
+        <tr bgcolor="#deeff7">
+            <td>双imei号登记量</td><td>5</td><td><font color="red">137</font></td>
+        </tr>
+    </table>
+    <p><font color="red">&nbsp;&nbsp;备注：点击登录总量数查看登录详情</font></p>
+</div>
+<!--查询明细-->
+<div class="banli">
+    <h3><b>根据当前所选择日期量查询明细：</b></h3>
+    <p style="color:#51A2D2;font-size:0.85rem;">&nbsp;&nbsp;实时办理明细</p>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="ui_table">
+        <tr>
+            <th>手机串码</th><th>套餐</th><th>是否核酬</th>
+        </tr>
+        <tr bgcolor="#fffbff">
+            <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+        </tr>
+        <tr>
+            <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+        </tr>
+        <tr bgcolor="#fffbff">
+            <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+        </tr>
+        <tr>
+            <td>8695520330063</td><td>半年免费打38档</td><td>客户未转化</td>
+        </tr>
+        <tr bgcolor="#fffbff">
+            <td>8695520330063</td><td>半年免费打38档</td><td>未登网无流量</td>
+        </tr>
+        <tr>
+            <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+        </tr>
+        <tr bgcolor="#fffbff">
+            <td>8695520330063</td><td>半年免费打38档</td><td>未办理副卡</td>
+        </tr>
+        <tr>
+        <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+    </tr>
+        <tr bgcolor="#fffbff">
+            <td>8695520330063</td><td>半年免费打38档</td><td>已核酬</td>
+        </tr>
+        <tr>
+            <td>8695520330063</td><td>半年免费打38档</td><td>未办理副卡</td>
+        </tr>
+    </table>
+</div>
+ </body>
+</html>

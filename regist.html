@@ -1,0 +1,76 @@
+﻿<html>
+<head>
+<title>营销执行</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <script src="js/jquery-1.10.2.js"></script>
+    <style>
+        *{margin:0;padding:0;}
+        body{width:100%;padding-top:20px;height:100%;background:/*url(images/bj.jpg)*/ #448BD2;overflow:hidden;font-family: 'Microsoft YaHei';}
+
+        /*登录页面*/
+        .login{height:100%;text-align:center;
+            margin:0 15px;padding-top:60px;line-height:3em;font-size:0.75rem;color:#fff;clear:both;overflow:hidden;}
+        .login h3{color:#fff;font-size:1.4rem;}
+        .login p{text-align:left;height:40px;text-indent:5px;border:1px solid #fff;border-radius: 5px;margin:15px auto;color:#fcfcfc;background: rgba(255,255,255,0.2);}
+        .login input.txt{height:40px;border:0;font-family:'Microsoft Yahei';background: none;border:0;color:#fcfcfc;}
+        .btn{display:block;width:100%;background:#fff;font-family: 'Microsoft YaHei';font-size:1rem;color:#4B95C4;line-height:40px;text-align:center;border: 0;border-radius: 5px;}
+        .pr{display: block;margin:5px auto;text-align: right;clear:both;}
+        .fl{float: left;}
+        .fr{float: right;}
+		input[type='button']{width:80px;height:40px;border:0;font-family:'Microsoft YaHei';background:#fff;}
+    </style>
+</head>
+<body>
+ <!-- login -->
+ <img src="http://xa.makalu.cc/wanhetong_xa/app/images/china_mobile.png" style="width:200px;margin-left: 15px;">
+<div class="login">
+<h3>易销客</h3>
+   <p>
+    <input type="tel" class="txt" placeholder="请输入手机号" id="mobile"  maxlength="11"  required="required"/>
+	<input type="button" value="获取验证码" class="fr" id="yzm" onclick="yzm()"/></p>
+<p>
+    <input type="text" class="txt"  id="ph_yzm" placeholder="请输入手机验证码"/></p>
+    <p>
+    <input type="password" id="psd" class="txt" value="请输入账号密码"/></p>
+    <p>
+    <input type="password" id="psd2" class="txt" value="请确认账号密码"/></p>
+    <button class="btn" onclick="regist()">立即注册</button>
+  </div>
+ <script>
+     function yzm(){
+        var reg=/^0{0,1}(13[4-9]|15[7-9]|15[0-2]|18[7-8])[0-9]{8}$/;
+          if(!reg.test($("#mobile").val())){   
+                alert("错误,请输入11位的手机号！");
+                return false;
+				$(this).val('');
+           }
+		  /* $.ajax({
+		   type:'post',
+		   url:'',
+		   data:$("#mobile").val(),
+		   //dataType:'text',
+		  success:(function(data)){
+		  $('#ph_yzm').val(data);
+		  }
+		   });*/
+     }
+	 function regist(){
+	 if($('#psd').val()==''){
+	  alert('原始密码不能为空');
+	 }
+	 if($('#psd2').val()==''){
+	  alert('确认密码不能为空');
+	 }
+	   if($("#psd").val()!=$("#psd2").val()){
+	     alert('2次输入密码不一致');
+		 oldPsd=' ';
+	   };
+	 }
+ </script>
+</body>
+</html>
+

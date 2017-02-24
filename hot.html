@@ -1,0 +1,134 @@
+﻿<html>
+<head>
+<title>营销执行</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <script src="js/jquery-1.5.1.js"></script>
+    <script>
+        $(function(){
+            $('.tab li').first().addClass('one');
+            $('.tab_list').first().show();
+            $(".tab ul li").click(function(){
+                $(this).addClass('one').siblings().removeClass('one');
+                $('.tab_list').hide().eq($(this).index()).show();
+            });
+
+        })
+    </script>
+    <style>
+        *{margin:0;padding:0;}
+        body{width:100%;height:100%;background:#fcfcfc;overflow:hidden;font-family: 'Microsoft YaHei';}
+        /*热词二维码*/
+        .hot{font-size:1rem;height:40px;display:block;background: #f6f6f6;border-bottom: 1px solid #ddd;}
+        .hot a{ display:inline-block;line-height:40px;width:100px;text-align:center;}
+        .hot a.on{color:#709FC8;font-weight: 800;border-bottom: 2px solid #709FC8}
+        /*tab标签*/
+        .tab{padding: 10px 0;font-size:0.75rem;color:#709FC8;margin:10px auto;clear:both;overflow:hidden;}
+        .tab ul{display:block;clear:both;text-align:center;margin:0 1%;}
+        .tab li{float:left;width:25%;height:2.4em;line-height:2.4em;text-align:center;border:1px solid #74B5DB;margin:0 5px;}
+        .one{background:#74B5DB;color:#fff;}
+        .borad-l3{border-radius:3px 0 0 3px;}
+        .borad-r3{border-radius:0 3px 3px 0}
+        .two{background: #fff;color:#709FC8;}
+        .tab_list{display: none;clear:both;padding: 0 10px;}
+        .list {
+            font-size:0.75rem;
+            height:90px;
+            padding:10px 0;
+           overflow: hidden;
+            border-bottom:1px solid #eee;
+                  box-shadow: 0 1px 1px #fff;
+            color:#666;
+        }
+        .list h4{font-size:0.75rem;height:2.6em;line-height:2.6em;word-wrap: break-word;overflow: hidden;}
+        .list p{color: #b8b8b8;line-height:1.6em;}
+        .list img {float:left;
+            display: inline-block;
+            width:100px;
+            height:70px;
+            margin:10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="hot">
+    <a class="on">热词</a>
+    <a>我的二维码</a>
+</div>
+ <!-- 热词 -->
+ <div class="tab">
+     <ul>
+         <li>小说</li>
+         <li>电影</li>
+         <li>游戏</li>
+     </ul>
+     <div class="tab_cont">
+         <div class="tab_list">
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+               </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+         </div>
+         <div class="tab_list">
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>电影（SUPOR）JJ34D801-180</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>电影（SUPOR）JJ34D801-180</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>电影（SUPOR）JJ34D801-180</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+         </div>
+         <div class="tab_list">
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+             <!--列表-->
+             <div class="list">
+                 <img src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" data-src="http://inews.gtimg.com/newsapp_ls/0/889540980_150120/0" alt="“浣碧”认爱“沉香” 两人自曝已相恋180天">
+                 <h4>苏泊尔（SUPOR）JJ34D801-180多</h4>
+                 <p>【保价到春节】12.12提前售，贺开业大促销，评价晒单真返现，请点“联系卖家”找客服有惊喜</p>
+             </div>
+         </div>
+     </div>
+ </div>
+</body>
+</html>
+

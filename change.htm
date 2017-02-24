@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>全员营销</title>
+<link type="text/css" rel="stylesheet"  href="style/main.css"/>
+<link type="text/css" rel="stylesheet"  href="style/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet"  href="style/dialog.css"/>
+<script src="js/echarts.js"></script>
+<script >
+	require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+	 require(
+        [
+            'echarts',
+            'echarts/chart/line',
+            'echarts/chart/bar',
+            'echarts/chart/pie',
+			'echarts/chart/map',
+            'echarts'
+        ],
+        function (ec)
+		{   
+			createLineChart(ec);
+		}
+    );
+		function createLineChart(ec)
+	{
+		 var myChart = ec.init(document.getElementById('main'));
+                var option = {
+			
+    title : {
+        text: '换机曲线图',
+        //subtext: '纯属虚构'
+		x:'center',
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+	       x : 'left',
+        data:['使用时长']
+	
+    },
+	grid:{
+		y2:'140',
+		x:'40',
+		x2:'20'
+	},
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+             boundaryGap : false,
+			scale:true,
+			axisLabel :{
+				rotate:70,
+				interval:0
+			},
+            data : ['2015年1月iphone4','2015年3月iphone5','2015年5月iphone5s','2015年7月iphone6','2015年8月iphone6 plus','2015年9月三星s6','2015年10月小米4']
+        }	
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value} 月'
+            }
+        }
+    ],
+    series : [
+        {
+            name:'使用时长',
+            type:'line',
+            data:[8, 10, 4, 6, 2, 0, 12],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+    ]
+};
+                    
+             myChart.setOption(option);
+	}
+</script>
+</head>
+<body>
+<!-------换机页面--------------->
+<div class="number">
+<h3><span>手机号码: </span>18583556875</h3>
+<h3><span>当前终端: </span>iphone 5s</h3>
+<h4><span>推荐终端: </span>iphone 6</h4>
+<h3><span>可获积分：</span><font color="#FF5C26">300</font></h3>
+</div>
+<div class="email_tel">
+<a><i class="fa fa-phone"></i></a>
+<a href="#0" class="cd-popup-trigger"><i class="fa fa-comment"></i></a>
+</div>
+<div class="change">
+  <div id="main" style="height:400px;width:100%;"></div>
+</div>
+ <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+            <textarea>亲:我发现你的手机比毛爷爷还老，根据你的长相、人品、有钱程度向你推荐 iphone6 plus 手机   赶紧行动吧！  告诉你个秘密 我能拿到内部价哦..."</textarea>
+            <ul class="cd-buttons">
+                <li><a href="#0">发送短信</a></li>
+                <li><a href="#0">取消</a></li>
+            </ul>
+            <a href="#0" class="cd-popup-close img-replace">Close</a>
+        </div>
+        <!-- cd-popup-container -->
+    </div>
+   <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/main.js"></script> 
+	  <script src="js/modernizr.js"></script>
+<div class="clear"></div>
+<footer>
+            <a href="group.htm" class="visited"><i class="fa fa-users"></i>营销</a>
+            <a href="market.htm" ><i class="fa fa-heart"></i>记录</a>
+            <a href="circle.htm"><i class="fa fa-pie-chart"></i>圈子</a>
+           <a href="user.htm"><i class="fa fa-user"></i>我</a>    
+ </footer>
+ </body>
+</html>

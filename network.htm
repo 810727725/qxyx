@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>全员营销</title>
+<link type="text/css" rel="stylesheet"  href="style/main.css"/>
+<link type="text/css" rel="stylesheet"  href="style/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet"  href="style/dialog.css"/>
+<script src="js/echarts.js"></script>
+<script >
+	require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+	 require(
+        [
+            'echarts',
+            'echarts/chart/line',
+            'echarts/chart/bar',
+            'echarts/chart/pie',
+			'echarts/chart/map',
+            'echarts'
+        ],
+        function (ec)
+		{   
+			createLineChart(ec);
+		}
+    );
+		function createLineChart(ec)
+	{
+		 var myChart = ec.init(document.getElementById('main'));
+                var option = {
+    title : {
+        text: '产品路线图',
+        //subtext: '纯属虚构'
+		x:'center'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['产品价格'],
+		x:'left'
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['一月','二月','三月','四月','五月','六月','七月']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+			axisLabel : {
+                formatter: '{value} 元'
+            }
+        }
+    ],
+    series : [
+        {
+            name:'产品价格',
+            type:'line',
+            data:[108, 168, 138, 198, 98, 68, 48],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        }
+    ]
+};
+                    
+             myChart.setOption(option);
+	}
+</script>
+</head>
+<body>
+<header><a href="javascript:history.go(-1);"><i class="fa fa-lg fa-angle-left"></i></a>全员营销</header>
+<!-------换机页面--------------->
+<div class="change">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td width="13%" rowspan="2"><div style="text-align:center;">功能费 </div></td>
+        <td width="16%" rowspan="2"><div style="text-align:center;">国内数据流量（2G/3G/4G） </div></td>
+        <td width="13%" rowspan="2"><div style="text-align:center;">国内主叫通话分钟数 </div></td>
+        <td width="13%" rowspan="2"><div style="text-align:center;">被叫免费范围 </div></td>
+        <td width="27%" colspan="2"><div style="text-align:center;">套餐外资费 </div></td>
+        <td width="15%" rowspan="2"><div style="text-align:center;">套餐详情及办理 </div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">国内数据流量 </div></td>
+        <td width="14%"><div style="text-align:center;">国内主叫通话</div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">58元/月</div></td>
+        <td width="16%"><div style="text-align:center;">500MB </div></td>
+        <td width="13%"><div style="text-align:center;">50分钟 </div></td>
+        <td width="13%" rowspan="8"><div style="text-align:center;">全国</div></td>
+        <td width="13%" rowspan="8"><div style="text-align:center;">0.29元/MB</div></td>
+        <td width="14%" rowspan="8"><div style="text-align:center;">0.19元/分钟</div></td>
+        <td width="15%" rowspan="8"><div style="text-align:center;"><a href="http://service.bj.10086.cn/poffice/package/showpackage.action?from=bj&PACKAGECODE=4GFXTC&isCheck=1" target="_blank"><strong>查看详情</strong></a></div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">88元/月</div></td>
+        <td width="16%"><div style="text-align:center;">700MB</div></td>
+        <td width="13%"><div style="text-align:center;">200分钟</div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:center;">138元/月</div></td>
+        <td width="16%"><div style="text-align:center;">1GB</div></td>
+        <td width="13%"><div style="text-align:center;">500分钟</div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:center;">158元/月</div></td>
+        <td width="16%"><div style="text-align:center;">2GB</div></td>
+        <td width="13%"><div style="text-align:center;">500分钟</div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">238元/月</div></td>
+        <td width="16%"><div style="text-align:center;">2GB</div></td>
+        <td width="13%"><div style="text-align:center;">1000分钟</div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">268元/月</div></td>
+        <td width="16%"><div style="text-align:center;">3GB</div></td>
+        <td width="13%"><div style="text-align:center;">1000分钟</div></td>
+    </tr>
+    <tr>
+        <td width="13%"><div style="text-align:center;">338元/月</div></td>
+        <td width="16%"><div style="text-align:center;">3GB</div></td>
+        <td width="13%"><div style="text-align:center;">2000分钟</div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:center;">588元/月</div></td>
+        <td width="16%"><div style="text-align:center;">6GB</div></td>
+        <td width="13%"><div style="text-align:center;">4000分钟</div></td>
+    </tr>
+</table>
+ 
+</div>
+
+<div class="clear"></div>
+<footer>
+            <a href="group.htm" class="visited"><i class="fa fa-users"></i>营销</a>
+            <a href="market.htm" ><i class="fa fa-heart"></i>记录</a>
+            <a href="circle.htm"><i class="fa fa-pie-chart"></i>圈子</a>
+           <a href="user.htm"><i class="fa fa-user"></i>我</a>    
+ </footer>
+</body>
+</html>

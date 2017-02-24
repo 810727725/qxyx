@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>微销宝</title>
+<link type="text/css" rel="stylesheet"  href="style/main.css"/>
+<link type="text/css" rel="stylesheet"  href="style/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet"  href="style/dialog.css"/>
+<script src="js/echarts.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+ $(function(){
+  $("button").click(function(){
+	   $("#bj").css('display','block');
+	   $("#alert").css('display','block');
+  })
+  $("#bj").click(function(){
+	   $("#bj").css('display','none');
+	   $("#alert").css('display','none');
+  })
+})
+</script>
+<script>
+	require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+	 require(
+        [
+            'echarts',
+            'echarts/chart/line',
+            'echarts/chart/bar',
+            'echarts/chart/pie',
+			'echarts/chart/map',
+            'echarts'
+        ],
+        function (ec)
+		{   
+			createLineChart(ec);
+		}
+    );
+		function createLineChart(ec)
+	{
+		 var myChart = ec.init(document.getElementById('main'));
+                var option = {
+			
+    title : {
+        text: '换机曲线图',
+        //subtext: '纯属虚构'
+		x:'center',
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+	       x : 'left',
+        data:['使用时长']
+	
+    },
+	grid:{
+		y2:'140',
+		x:'40',
+		x2:'20'
+	},
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+             boundaryGap : false,
+			scale:true,
+			axisLabel :{
+				rotate:70,
+				interval:0
+			},
+            data : ['2015年1月iphone4','2015年3月iphone5','2015年5月iphone5s','2015年7月iphone6','2015年8月iphone6 plus','2015年9月三星s6','2015年10月小米4']
+        }	
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value} 月'
+            }
+        }
+    ],
+    series : [
+        {
+            name:'使用时长',
+            type:'line',
+            data:[8, 10, 4, 6, 2, 0, 12],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+    ]
+};
+                    
+             myChart.setOption(option);
+	}
+</script>
+<style>
+/* 本例子css -------------------------------------- */
+
+	.tabBox .hd{ height:40px; line-height:40px; padding:0 10px; font-size:1rem; background:#f9f9f9; border-bottom:2px solid #ccc;  }
+	.tabBox .hd ul{ overflow:hidden;  }
+	.tabBox .hd ul li{ float:left; color:#777;padding:0 18px; }
+	.tabBox .hd a{color:#777;}
+	.tabBox .hd a i{margin:0 5px;}
+	.tabBox .hd ul .on{ border-bottom:2px solid #BA2636; color:#DB5664;  }
+	.tabBox .hd ul .on a{ display:block;color:#DB5664; /* 修复Android 4.0.x 默认浏览器当前样色无效果bug */  }
+	.tabBox .hd ul .on a i{color:#DB5664;}
+	.tabBox .bd ul{ padding:10px 0 10px 10px; background:#fff;}
+	.tabBox .bd ul img{max-width:100%;width:100%;width:auto;}
+	
+	/*弹出框*/
+	#bj{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;z-index:2;}
+	#alert{position:fixed;top:50%;left:50%;width:240px;height:50px;line-height:50px;text-align:center;margin:-20px -120px;background:rgba(255,255,255,0.9);border-radius:3px;display:none;z-index:100;}
+</style>
+</head>
+<body>
+<div id="bj"></div>
+<div id="alert">办理成功！</div>
+<!-------换机页面--------------->
+<div class="number">
+<h3><span>手机: </span>苹果IPHONE 5S（3500元）</h3>
+<h3><span>产品: </span>4G飞享138元套餐</h3>
+<h3><span>上月资费：</span>165元</h4>
+<h3><span>上月流量：</span>800M</h3>
+<h3><span>已订购流量包：</span>30元套餐包</h3>
+</div>
+<div id="leftTabBox" class="tabBox">
+				<div class="hd">
+					<ul>
+						<li class=""><a href="#"><i class="fa fa-reply-all"></i>换机</a></li>
+						<li class=""><a href="#"><i class="fa fa-cube"></i>产品</a></li>
+						<li class=""><a href="#"><i class="fa fa-gift"></i>流量包</a></li>
+					
+					</ul>
+				</div>
+				<div class="bd">
+						<ul>
+							<div class="number" style="margin:10px auto;">
+							<h3><span>推荐价位：</span>4000~5000</h3>
+                            <h3><span>推荐尺寸：</span>4.3寸~5.5寸</h3>
+							<h3><span>推荐终端：</span>苹果IPHONE 6</h3>
+							<p align="center"><button style="width:60%;height:38px;margin:5px auto;background:#44B8BD;font:1rem 'Microsoft Yahei';border:0;border-radius:5px;color:#fff;">成功办理 </button></p>
+
+
+<!--<div class="email_tel">
+<a><i class="fa fa-phone"></i></a>
+<a href="#0" class="cd-popup-trigger"><i class="fa fa-comment"></i></a>
+</div>-->
+<div class="change">
+  <div id="main" style="height:400px;width:100%;"></div>
+</div>
+						</ul>
+						<ul>
+						
+							<div class="number" >
+							<h3><span style="float:left;">推荐产品：</span>4G飞享188元套餐（新版）套餐包含流量XXM，语音XX分钟</h3>
+                        <img src="images/code.jpg"/>
+
+						</ul>
+						<ul>
+							<div class="number" >
+							<h3><span style="float:left;">推荐流量包：</span>50元流量包  包含流量XXM
+</h3>
+                        <img src="images/code.jpg"/>
+						</ul>
+						
+				</div>
+			</div>	
+<script type="text/javascript">
+TouchSlide({ slideCell:"#leftTabBox" });
+</script>			
+
+ <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+            <textarea>亲:我发现你的手机比毛爷爷还老，根据你的长相、人品、有钱程度向你推荐 iphone6 plus 手机   赶紧行动吧！  告诉你个秘密 我能拿到内部价哦..."</textarea>
+            <ul class="cd-buttons">
+                <li><a href="#0">发送短信</a></li>
+                <li><a href="#0">取消</a></li>
+            </ul>
+            <a href="#0" class="cd-popup-close img-replace">Close</a>
+        </div>
+        <!-- cd-popup-container -->
+    </div>
+   <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/main.js"></script> 
+	  <script src="js/modernizr.js"></script>
+<div class="clear"></div>
+<footer>
+ <a href="search.htm" class="visited"><i class="fa fa-search"></i>查询</a>
+            <a href="group.htm" ><i class="fa fa-users"></i>营销</a>
+            <a href="market.htm" ><i class="fa fa-heart"></i>记录</a>
+            <a href="circle.htm"><i class="fa fa-pie-chart"></i>圈子</a>
+           <a href="user.htm"><i class="fa fa-user"></i>我</a>    
+ </footer>
+ </body>
+</html>

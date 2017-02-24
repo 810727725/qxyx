@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>微销宝</title>
+<link type="text/css" rel="stylesheet"  href="style/main.css"/>
+<link type="text/css" rel="stylesheet"  href="style/font-awesome.min.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+  
+  $('li.mainlevel').mouseover(function(){
+  $(this).find('ul').show("1000").css('z-index','1000');//you can give it a speed
+  });
+  $('li.mainlevel').mouseleave(function(){
+  $(this).find('ul').slideUp("fast");
+  });
+  
+  $('dt a').eq(1).css('color','#EA8181');
+  $('a').click(function(){
+   $(this).css('color','#EA8181').siblings().css('color','#999');
+  })
+});
+
+</script>
+<style>
+header{height:50px;position:fixed;top:0;z-index:1;}
+.group{margin:0 auto;}
+.group dd.goods a{float:left;width:30%; position:relative;text-align:center;line-height:1.5em;color:#AAAAAA;cursor:pointer;}
+#kehu{height:54px;position:fixed;top:0;z-index:1;background:#FDFDFD;box-shadow:0 2px 0 #9ED5DF;overflow:hidden;}
+</style>
+</head>
+<body>
+<!-------圈子--------------->
+<div class="group" id="kehu">
+<dl>
+<dt>
+<a class="kh" title="客户" href="#"><i class="fa fa-users"></i>客户</a>
+<a class="kh" title="客户" href="#"><i class="fa fa-briefcase"></i>企业</a>
+</dt>
+<dd class="goods">
+<a title="换机" href="#"><i  class="fa fa-2x fa-reply-all"></i><br/>换机 </a>
+<a title="产品" href="#"><i class="fa fa-2x fa-cube"></i><br/>产品 </a>
+<a title="流量包" href="#"><i class="fa fa-2x fa-gift"></i><br/>流量包 </a>
+<a style="margin-top:5px;" title="下载" href="#"><i class="fa fa-download"></i></a>
+</dd>
+</dl>
+</div>
+<div class="group" style="margin-top:54px;">
+<dl>
+<dt><a href="user-infor.htm"><b>中国人民银行</b>
+<span class="time">(218)</span></a></dt><dd class="goods">
+<a id="red" title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机  <font color="#6CC9D0">（20%）</font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品 <font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包 <font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+
+<dl>
+<dt><a href="user-infor.htm"><b>户县工商银行</b>
+<span class="time">218</span></a></dt><dd class="goods">
+<a title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机 <font color="#6CC9D0">（20%）</font></font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品<font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包<font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+<dl>
+<dt><a href="user-infor.htm"><b>蓝田县农业银行</b>
+<span class="time">218</span></a></dt><dd class="goods">
+<a title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机 <font color="#6CC9D0">（20%）</font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品<font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包<font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+<dl>
+<dt><a href="user-infor.htm"><b>长安信用社</b>
+<span class="time">218</span></a></dt><dd class="goods">
+<a title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机 <font color="#6CC9D0">（20%）</font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品<font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包<font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+<dl>
+<dt><a href="user-infor.htm"><b>临潼区建设银行</b>
+<span class="time">218</span></a></dt><dd class="goods">
+<a title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机 <font color="#6CC9D0">（20%）</font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品<font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包<font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+<dl>
+<dt><a href="user-infor.htm"><b>中国工商银行高陵支行</b>
+<span class="time">218</span></a></dt><dd class="goods">
+<a id="red" title="换机" href="change.htm">
+<i class="fa fa-2x fa-reply-all"></i></br>
+换机  <font color="#6CC9D0">（20%）</font></a>
+<a title="产品" href="product.htm"><i class="fa fa-2x fa-cube"></i></br> 产品 <font color="#6CC9D0">（20%）</font></a>
+<a title="流量包" href="flow.htm"><i class="fa fa-2x fa-gift"></i></br>流量包 <font color="#6CC9D0">（10%）</font></a>
+<a></br><i class="fa fa-download "></i></a>
+</dd>
+</dl>
+</div>
+<!--注释全部下载
+<div class="download">
+<i class="fa fa-cloud-download  "></i>全部下载
+</div>-->
+<div class="clear"></div>
+<footer>
+ <a href="search.htm"><i class="fa fa-search"></i></br>查询</a>
+            <a href="group.htm"  class="visited"><i class="fa fa-users"></i></br>营销</a>
+            <a href="market.htm" ><i class="fa fa-heart"></i></br>记录</a>
+            <a href="circle.htm"><i class="fa fa-pie-chart"></i></br>圈子</a>
+           <a href="user.htm"><i class="fa fa-user"></i></br>我</a>    
+ </footer>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>全员营销</title>
+<link type="text/css" rel="stylesheet"  href="style/main.css" />
+    <script src="js/jquery-1.5.1.js"></script>
+    <script>
+        $(function(){
+            $("input").focus(function(){
+                //$(this).val('');
+                $(this).next().show();
+                if($(this).val!==null){
+                    $(this).next().show();
+                }
+            });
+            $("span").click(function(){
+                $(this).siblings().val('');
+                $(this).hide();
+            });
+        })
+		
+		
+		2016-10-31  123
+		2016-11-01  132
+		2016-11-03  122
+		2016-11-08  101
+		2016-11-10  81
+		2016-11-14  127
+		2016-11-15  124
+		     合计：￥810
+    </script>
+</head>
+<body style="background:#fff;">
+<header>全员营销</header>
+<!--登录-->
+<div class="login">
+<p>账号  <input type="text" placeholder="请输入账号"  id="admin"/><span>&times;</span></p>
+<p>密码  <input type="password"  placeholder="请输入密码" id="psw" /><span>&times;</span></p>
+<div class="regist"><a><input type="checkbox" id='sign'><label for="sign">自动登录</label></a></div>
+<input type="button" value="登录"  onClick="location.href='group.htm'"/>
+</div>
+<!--登录-->
+</body>
+</html>
